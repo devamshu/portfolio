@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="eg">
+<head>
+    <title>Protfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2f3a268b27.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div id="header">
+         <div class="container">
+            <nav>
+                 <img src="" class="logo">
+                <ul id="sidemenu">
+                   
+                    <li><a href="#About">About Me</a></li>
+                    <li><a href="#About" onclick="opentab('experience')">Projects</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                    <i class="fas fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+             <div class ="header-text">
+                <p> Student / Tech Enthusiast  </p><!--write something later-->
+                <h1>Hi, I'm <span style="color:#ff004f ;">Devanshu Aryal</span><br> From Nepal </h1>
+                <img class="profile1" src="images/profile101.jpg" >
+            </div>
+                
+                
+        </div>
+</div>
+
+        <!--------------------About me  section------------------------->
+<div id="About">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                        <img class="o1" src="images/profile103.png"> 
+                </div><!-- this is another profile picture of the user -->
+                        
+
+                <div class="about-col-2">
+                     <h1 class="sub-tittle">About <span style="color:#ff004f ;">Me</span></h1>
+                    <p> Hi,I am Devanshu Aryal, a passionate 19-year-old currently pursuing a Bachelor's degree in Computing at Islington College. 
+                        With a keen interest in the world of software, I am driven by a deep love for working with cutting-edge technologies
+                        and creating innovative solutions. Whether it's coding, problem-solving, designing, or exploring the endless possibilities of the digital world 
+                        .</p>
+
+                    <div class="tab-titles">
+                        <P class="tab-links active-link" onclick="opentab('skills')">Skills</P>
+                        <P class="tab-links"onclick="opentab('experience')">Projects</P>
+                        <P class="tab-links"onclick="opentab('education')">Education</P>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>HTML ,CSS ,Javascript </span><br>creating web applications.</li>
+                            <li><span>Ui/UX</span><br>Designing web/app interfaces.</li>
+                            <li><span>Java</span><br>IOT, Mobile application devlopment , Game devlopment </li>
+                            <li><span>SQL/Oracle database </span><br>creating database.</li>
+                            <li><span>AWS Cloud </span><br>Cloud Services</li>
+                            
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>E-Commerce Website </span><br>Tools used: Figma, HTML, CSS, Javascript, VS code </li>
+                            <li><span>Weather Tracker</span><br>Tools Used: HTML, CSS , Javascript, VS code</li>
+                            <li><span>To-Do list Manager</span><br>Tools Used: HTML, CSS , Javascript, VS code</li>
+                            <li><span>Library Managemet System</span><br>Tools Used: Python3 , VS code </li>
+                            <li><span>Bank Managemet System</span><br>Tools Used: Java, VS code </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2015-2019</span><br>Completed my secondary education in Sainik Awasya Mahavidyalaya (Army School). <br>Result: A </li>
+                            <li><span>2020-2021</span><br>completed my higher secondary education in united college with major in 'physics' and 'maths'. <br>Result : A</li>
+                             <li><span>2022-on going </span><br>Studing Bachlors in Computing "BSc(hons) Computing" at Islington College </li>
+                                
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<!----------------------------------------------------contact me  --------------------------------------------->
+
+
+<div id="Contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-tittle"><span style="color:#ff004f ;"> C</span>ontact <span style="color:#ff004f ;">Me</span></h1>
+                <p><i class="fa-regular fa-paper-plane"></i> ylucifer17@gmail.com</p>
+                <p><i class="fas fa-phone"> </i> 984597879</p>
+                <div class="social-icons">
+                    
+                    <a href="https://www.facebook.com/devanshu.aryal" target="_blank" style="color: #1877F2;" ><i class='fab fa-facebook'></i></a>
+                    <a href="https://github.com/devamshu" target="_blank" style="color:#c7446e;"><i class="fa-brands fa-github"></i> </a>
+                    <a href="https://www.linkedin.com/in/devanshu-aryal-4b737a2a3/" target="_blank" style="color:#2867B2;"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <!--cv download -->
+                <a href="images/Devanshu Aryal Resume.pdf" download class="btn">Downoad Cv</a>
+            </div>
+
+            <div class="contact-right">
+                <form onsubmit="sendEmail(); reset(); return false; ">
+                    <input type="text"  placeholder="Your Name " id="name"  required>
+                    <input type="email"  placeholder="Email Address" id="email" required>
+                    <textarea name="text" id="message" rows="6" placeholder="Your message " ></textarea>
+                    <button type="sumbit" class="btn1">sumbit</button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>copyright @ Devanshu.2023</p>
+    </div>
+</div>
+
+
+
+
+
+
+<!--this is done to acess the mail sent by others-->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+    function sendEmail(){
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let message = document.getElementById("message").value;
+        
+        Email.send({
+            SecureToken:"e16a3408-c32f-47f8-98a0-d23b8ba3f2de",
+            To : 'np01cp4a220148@islingtoncollege.edu.np',
+            From : "ylucifer17@gmail.com",
+            Subject : "Inquery",
+            Body : "Name : "+name + "<br/> User Email : "+email + "<br/> User Message : "+message
+        }).then(
+        message => alert(message + " Your message has been Delivered "  )
+        );
+
+    }
+
+
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname)
+    {
+        //it removes the data when clickd in the titles to show other .
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        //it adds the data and removes the other when clicked in the next title .
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+
+
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right ="0";
+    }
+    function closemenu(){
+        sidemenu.style.right ="-200px";
+        
+    }
+
+    
+
+</script>
+
+
+
+</body>
+</html>
